@@ -329,53 +329,83 @@ li {
 /* 📱 CLUTCH MOBILE VERSION */
 /* ========================= */
 
+/* ========================= */
+/* 📱 CLUTCH MOBILE OPTIMIZED */
+/* ========================= */
+
 @media (max-width: 480px) {
 
+    body {
+        padding: 0 12px;
+    }
+
     .clutch-container {
-        width: 95%;
+        width: 100%;
         margin: 20px auto;
-        padding-bottom: 120px;
+        padding-bottom: 130px; /* space for fixed navbar */
+    }
+
+    /* HEADER */
+    .header {
+        margin-bottom: 20px;
     }
 
     .header h1 {
-        font-size: 26px;
+        font-size: 24px;
+        line-height: 1.2;
     }
 
     .header p {
-        font-size: 14px;
-    }
-
-    .card {
-        padding: 16px;
-        border-radius: 14px;
-    }
-
-    .timer-card h2 {
-        font-size: 36px;
-    }
-
-    .timer-buttons {
-        gap: 10px;
-    }
-
-    .timer-buttons button {
-        padding: 6px 14px;
-        font-size: 12px;
-    }
-
-    .add-task {
-        padding: 6px 12px;
         font-size: 13px;
     }
 
+    .sub {
+        font-size: 11px;
+    }
+
+    /* CARDS */
+    .card {
+        padding: 14px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    /* TIMER */
+    .timer-card h2 {
+        font-size: 34px;
+    }
+
+    .timer-buttons {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .timer-buttons button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* TASK BUTTON */
+    .add-task {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .add-task span {
+        font-size: 16px;
+    }
+
+    /* EXIT BUTTON */
     .exit-btn {
         padding: 10px;
         font-size: 14px;
     }
 
+    /* POPUP */
     .popup-content {
-        width: 90%;
+        width: 95%;
         padding: 20px;
+        border-radius: 16px;
     }
 
     .popup-content h2 {
@@ -386,11 +416,11 @@ li {
         font-size: 14px;
     }
 
-    /* 🔥 Responsive Navbar */
+    /* NAVBAR FIX */
     .bottom-nav {
         width: 95%;
         bottom: 15px;
-        padding: 12px 8px;
+        padding: 10px 6px;
     }
 
     .nav-item span {

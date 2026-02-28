@@ -330,3 +330,73 @@ body.clutch #timer {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .app {
+        width: 95%;
+        margin: 20px auto 100px auto;
+    }
+
+    .header {
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .profile {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .progress-bar {
+        height: 8px;
+    }
+
+    #timer {
+        font-size: 16px;
+    }
+
+    .focus button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .calendar-dates {
+        gap: 5px;
+    }
+
+    .date {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .bottom-nav {
+        width: 95%;
+        bottom: 15px;
+        padding: 12px 8px;
+    }
+
+    .nav-item span {
+        font-size: 18px;
+    }
+
+    .nav-item p {
+        font-size: 10px;
+    }
+
+    .congrats-popup {
+        width: 85%;
+        padding: 20px;
+        font-size: 14px;
+    }
+}
