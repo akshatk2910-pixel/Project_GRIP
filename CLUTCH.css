@@ -325,3 +325,79 @@ li {
         0 0 30px #c77dff;
     transform: translateY(-4px);
 }
+/* ========================= */
+/* 📱 CLUTCH MOBILE VERSION */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .clutch-container {
+        width: 95%;
+        margin: 20px auto;
+        padding-bottom: 120px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .timer-card h2 {
+        font-size: 36px;
+    }
+
+    .timer-buttons {
+        gap: 10px;
+    }
+
+    .timer-buttons button {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .add-task {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .exit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .popup-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .popup-content h2 {
+        font-size: 18px;
+    }
+
+    .popup-content p {
+        font-size: 14px;
+    }
+
+    /* 🔥 Responsive Navbar */
+    .bottom-nav {
+        width: 95%;
+        bottom: 15px;
+        padding: 12px 8px;
+    }
+
+    .nav-item span {
+        font-size: 18px;
+    }
+
+    .nav-item p {
+        font-size: 10px;
+    }
+}
