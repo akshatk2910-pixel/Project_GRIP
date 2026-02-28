@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIP Mode</title>
+<link rel="stylesheet" href="GRIP.css">
+</head>
+<body>
+
+<div class="app">
+
+<div class="header">
+    <div>
+        <div class="logo">GRIP</div>
+        <div class="clock" id="clock"></div>
+    </div>
+    <div class="profile">👤</div>
+</div>
+
+<h2>Welcome back, <span class="highlight">Ishitve</span> 👋</h2>
+
+<div class="card">
+    <h3>Today's Screen Time</h3>
+    <div class="screen-time">
+        <div>📸 Instagram <span>1h 20m</span></div>
+        <div>▶️ YouTube <span>45m</span></div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="progress-header">
+        <h3>🎯 Session Goal</h3>
+<span id="progressText">0 / 5 sessions</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+    </div>
+</div>
+
+<div class="card nudge">
+    🔔 Assignment due tomorrow — small step today?
+</div>
+
+<div class="card focus">
+    <div>
+        📚 Focus Session  
+        <div id="timer">25:00</div>
+    </div>
+   <button onclick="startPomodoro()">Start</button>
+<button onclick="pausePomodoro()">Pause</button>
+<button onclick="completeSession()">Done</button>
+</div>
+
+<div class="card calendar-card">
+    <h3 onclick="toggleCalendar()">📅 Reminder Calendar</h3>
+    <div id="calendarBox" class="calendar-box">
+        <div class="calendar-header">
+            <select id="monthSelect"></select>
+            <select id="yearSelect"></select>
+        </div>
+        <div id="calendarDates" class="calendar-dates"></div>
+    </div>
+</div>
+
+<div class="privacy">
+    🔒 Privacy First • No content tracking. No spying.
+</div>
+
+</div>
+
+<!-- 🔥 BOTTOM NAVBAR -->
+<div class="bottom-nav">
+    <a href="GRIP.html" class="nav-item active">
+        <span>🏠</span>
+        <p>Grip</p>
+    </a>
+
+    <a href="CLUTCH.html" class="nav-item">
+        <span>⚡</span>
+        <p>Clutch</p>
+    </a>
+
+    <a href="#" class="nav-item">
+        <span>👤</span>
+        <p>Profile</p>
+    </a>
+</div>
+
+<script src="GRIP.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIP — Discipline, but personal</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#0e0e0e;
+    color:#e8e1d6;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#0e0e0e;
+    position:sticky;
+    top:0;
+}
+
+nav h1{
+    color:#d6c3a3;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#e8e1d6;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#d6c3a3;
+}
+
+/* SIGN IN BUTTON */
+.signin-btn{
+    margin-left:30px;
+    padding:8px 18px;
+    border:1px solid #d6c3a3;
+    border-radius:25px;
+    color:#d6c3a3;
+}
+
+.signin-btn:hover{
+    background:#d6c3a3;
+    color:#000;
+}
+
+/* HERO */
+.hero{
+    height:85vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(180deg,#0e0e0e,#1b1b1b);
+}
+
+.hero h1{
+    font-size:56px;
+    color:#d6c3a3;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+    color:#bfb7a8;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#d6c3a3;
+    color:#000;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>GRIP</h1>
+
+    <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Contact</a>
+
+        <a href="#" class="signin-btn">Sign In</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Discipline, but make it personal</h1>
+    <p>Privacy-first digital discipline for students</p>
+    <a href="GRIP.html"><button>Explore</button></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1a0033, #000000);
+    color: white;
+}
+
+.clutch-container {
+    max-width: 420px;
+    width: 95%;
+    margin: 40px auto;
+    padding-bottom: 140px; /* space for fixed navbar */
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #c77dff;
+    text-shadow: 0 0 20px #9d4edd;
+}
+
+.header p {
+    color: #e0aaff;
+}
+
+.sub {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.card {
+    background: rgba(30, 0, 50, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #9d4edd;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+}
+
+.timer-card h2 {
+    font-size: 48px;
+    text-align: center;
+    color: #e0aaff;
+    text-shadow: 0 0 25px #c77dff;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.timer-buttons button {
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.timer-buttons button:hover {
+    box-shadow: 0 0 15px #c77dff;
+}
+
+.alert-card {
+    background: rgba(50, 0, 80, 0.9);
+    font-weight: bold;
+    color: #ffb3ff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.add-task {
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #c77dff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #c77dff;
+    cursor: pointer;
+}
+
+.add-task:hover {
+    background: #9d4edd;
+    color: white;
+}
+
+.break-card {
+    text-align: center;
+    font-weight: bold;
+    color: #e0aaff;
+}
+
+.privacy {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.exit-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid #c77dff;
+    color: #c77dff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background: #9d4edd;
+    color: white;
+}
+
+.clutch-nav {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 12px;
+    border-radius: 50px;
+    background: rgba(20, 0, 40, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid #9d4edd;
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.7);
+}
+
+.clutch-nav .nav-item {
+    text-align: center;
+    text-decoration: none;
+    color: #c77dff;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.clutch-nav .nav-item span {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.clutch-nav .nav-item p {
+    margin: 0;
+}
+
+.clutch-nav .nav-item:hover {
+    color: white;
+    transform: translateY(-4px);
+}
+
+.clutch-nav .nav-item.active {
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    padding: 10px 18px;
+    border-radius: 35px;
+    color: white;
+    box-shadow: 0 0 20px #c77dff;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #9d4edd; }
+    50% { box-shadow: 0 0 25px #c77dff; }
+    100% { box-shadow: 0 0 10px #9d4edd; }
+}
+/* Better Add Task Button */
+
+.add-task {
+    margin-top: 10px;
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.6);
+    transition: 0.3s ease;
+}
+
+.add-task span {
+    font-size: 18px;
+}
+
+.add-task:hover {
+    box-shadow: 0 0 25px #c77dff;
+    transform: translateY(-2px);
+}
+
+
+/* Distraction Popup */
+
+.distraction-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: rgba(30, 0, 50, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #9d4edd;
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.8);
+    width: 320px;
+}
+
+.popup-content h2 {
+    color: #c77dff;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    color: #e0aaff;
+    margin-bottom: 20px;
+}
+
+.popup-content button {
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
+/* Motivation Card */
+.alert-card {
+    background: rgba(50, 0, 80, 0.9);
+    font-weight: bold;
+    color: #ffb3ff;
+    text-align: center;
+}
+
+.alert-card h3 {
+    margin-bottom: 10px;
+    color: #c77dff;
+}
+
+.alert-card p {
+    font-size: 16px;
+    min-height: 40px;
+    transition: 0.3s ease;
+}
+/* =====================
+   SAME NAVBAR AS GRIP
+===================== */
+
+/* =========================
+   CLUTCH NAVBAR (Same Size, Violet Theme)
+========================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;                 /* Same size as Grip */
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 12px;
+    border-radius: 50px;
+
+    background: rgba(20, 0, 40, 0.85);  /* Violet glass */
+    backdrop-filter: blur(15px);
+
+    border: 1px solid #9d4edd;
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.6);
+}
+
+.nav-item {
+    text-align: center;
+    color: #c77dff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 20px;
+}
+
+.nav-item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.nav-item:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.nav-item.active {
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    color: white;
+    box-shadow: 
+        0 0 15px #9d4edd,
+        0 0 30px #c77dff;
+    transform: translateY(-4px);
+}

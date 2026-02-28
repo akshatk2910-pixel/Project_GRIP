@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLUTCH MODE - Violet</title>
+    <link rel="stylesheet" href="CLUTCH.css">
+</head>
+<body>
+
+<div class="clutch-container">
+
+    <div class="header">
+        <h1>CLUTCH MODE ⚡</h1>
+        <p>High Intensity Focus</p>
+        <span class="sub">For exams, deadlines & deep study sessions</span>
+    </div>
+
+    <!-- TIMER -->
+    <div class="card timer-card">
+        <h2 id="timer">50:00</h2>
+        <div class="timer-buttons">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+
+    <!-- MOTIVATION CARD -->
+    <div class="card alert-card">
+        <h3>🔥 WAR MODE</h3>
+        <p id="motivationText">
+            Discipline builds empires.
+        </p>
+    </div>
+
+    <!-- TASK CARD -->
+    <div class="card">
+        <h3>🎯 Study Targets</h3>
+        <ul id="taskList">
+            <li><input type="checkbox"> Review notes</li>
+            <li><input type="checkbox"> Solve 10 math problems</li>
+            <li><input type="checkbox"> Practice quiz</li>
+        </ul>
+
+        <button class="add-task">
+            <span>＋</span> Add Task
+        </button>
+    </div>
+
+    <div class="privacy">
+        🔒 Privacy First • No content tracking. Only usage patterns.
+    </div>
+
+</div>
+
+<!-- 🔥 SAME NAVBAR AS GRIP -->
+<div class="bottom-nav">
+    <a href="GRIP.html" class="nav-item">
+        <span>🏠</span>
+        <p>Grip</p>
+    </a>
+
+    <a href="CLUTCH.html" class="nav-item active">
+        <span>⚡</span>
+        <p>Clutch</p>
+    </a>
+
+    <a href="#" class="nav-item">
+        <span>👤</span>
+        <p>Profile</p>
+    </a>
+</div>
+
+<!-- DISTRACTION POPUP -->
+<div class="distraction-popup" id="distractionPopup">
+    <div class="popup-content">
+        <h2>⚡ Stay Locked In</h2>
+        <p id="quoteText"></p>
+        <button onclick="closePopup()">Back to Clutch</button>
+    </div>
+</div>
+
+<script>
+
+/* ================= TIMER ================= */
+
+let time = 50 * 60;
+let interval = null;
+let timerStarted = false;
+
+function updateDisplay() {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    document.getElementById("timer").innerText =
+        (minutes < 10 ? "0" : "") + minutes + ":" +
+        (seconds < 10 ? "0" : "") + seconds;
+}
+
+function startTimer() {
+    if (interval) return;
+
+    timerStarted = true;
+
+    interval = setInterval(() => {
+        if (time <= 0) {
+            clearInterval(interval);
+            interval = null;
+            document.getElementById("timer").innerText = "00:00";
+            alert("🔥 Clutch Session Complete!");
+            return;
+        }
+        time--;
+        updateDisplay();
+    }, 1000);
+}
+
+function pauseTimer() {
+    clearInterval(interval);
+    interval = null;
+}
+
+function resetTimer() {
+    clearInterval(interval);
+    interval = null;
+    time = 50 * 60;
+    updateDisplay();
+}
+
+/* ================= MOTIVATION ROTATOR ================= */
+
+const hardcoreQuotes = [
+    "Discipline builds empires.",
+    "Pain of discipline > Pain of regret.",
+    "No one is coming to save you.",
+    "Outwork your yesterday.",
+    "Comfort is your enemy.",
+    "Winners execute. Losers complain.",
+    "If it was easy, everyone would win.",
+    "Study now. Dominate later.",
+    "Excuses don’t build futures.",
+    "You either suffer now or regret later."
+];
+
+function rotateMotivation() {
+    const random = hardcoreQuotes[Math.floor(Math.random() * hardcoreQuotes.length)];
+    document.getElementById("motivationText").innerText = random;
+}
+
+setInterval(rotateMotivation, 5000);
+
+/* ================= TASK SYSTEM ================= */
+
+const taskList = document.getElementById("taskList");
+const addTaskBtn = document.querySelector(".add-task");
+
+addTaskBtn.addEventListener("click", function() {
+    let task = prompt("Enter new task:");
+    if (!task) return;
+
+    let li = document.createElement("li");
+    li.innerHTML = `<input type="checkbox"> ${task}`;
+    taskList.appendChild(li);
+
+    saveTasks();
+});
+
+taskList.addEventListener("change", saveTasks);
+
+function saveTasks() {
+    localStorage.setItem("clutchTasks", taskList.innerHTML);
+}
+
+function loadTasks() {
+    let saved = localStorage.getItem("clutchTasks");
+    if (saved) {
+        taskList.innerHTML = saved;
+    }
+}
+
+loadTasks();
+
+/* ================= DISTRACTION CONTROL ================= */
+
+document.addEventListener("visibilitychange", function () {
+    if (document.hidden && timerStarted) {
+        showPopup();
+    }
+});
+
+function showPopup() {
+    const randomQuote = hardcoreQuotes[Math.floor(Math.random() * hardcoreQuotes.length)];
+    document.getElementById("quoteText").innerText = randomQuote;
+    document.getElementById("distractionPopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("distractionPopup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

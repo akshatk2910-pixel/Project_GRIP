@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    background: radial-gradient(circle at top, #1a1a1a, #000000);
+}
+
+
+.app {
+    width: 400px;
+    margin: 40px auto 120px auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: orange;
+    text-shadow: 0 0 15px orange;
+}
+
+.profile {
+    font-size: 24px;
+}
+
+.highlight {
+    color: orange;
+}
+
+
+.card {
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,165,0,0.25);
+    box-shadow: 0 8px 25px rgba(255,140,0,0.15);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255,140,0,0.25);
+}
+
+
+.screen-time div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #333;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.progress {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, orange, #ff6600);
+    border-radius: 10px;
+    box-shadow: 0 0 15px orange;
+}
+
+.nudge {
+    background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+    color: orange;
+    font-weight: bold;
+}
+
+
+.focus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.focus button {
+    background: linear-gradient(45deg, orange, #ff4500);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(255,140,0,0.4);
+}
+
+.focus button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px orange;
+}
+
+
+.calendar-card h3 {
+    cursor: pointer;
+    color: orange;
+}
+
+.calendar-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.calendar-box.active {
+    max-height: 500px;
+    margin-top: 15px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.calendar-header select {
+    background: #1a0033;
+    color: #c77dff;
+    border: 1px solid #9d4edd;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.date {
+    padding: 8px;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(40,0,60,0.8);
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #9d4edd;
+}
+
+.date:hover {
+    background: #9d4edd;
+    color: white;
+}
+
+.date.selected {
+    background: #c77dff;
+    color: black;
+}
+
+
+.clock {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#timer {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: orange;
+}
+
+/* Animated progress */
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, orange, #ff6600);
+    border-radius: 10px;
+    box-shadow: 0 0 15px orange;
+    transition: width 1.5s ease;
+}
+
+/* CLUTCH MODE */
+body.clutch {
+    background: radial-gradient(circle at top, #2b0000, #000);
+}
+
+body.clutch .card {
+    border: 1px solid rgba(255,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(255,0,0,0.3);
+}
+
+body.clutch .logo,
+body.clutch .highlight,
+body.clutch #timer {
+    color: #ff2e2e;
+    text-shadow: 0 0 10px red;
+}
+
+
+.privacy {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 12px;
+    border-radius: 50px;
+
+    background: rgba(25, 15, 0, 0.85);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,140,0,0.5);
+    box-shadow: 0 10px 30px rgba(255,140,0,0.4);
+}
+
+.nav-item {
+    text-align: center;
+    color: orange;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 20px;
+}
+
+.nav-item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+.nav-item:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+.nav-item.active {
+    background: linear-gradient(45deg, orange, #ff4500);
+    color: white;
+    box-shadow: 
+        0 0 15px orange,
+        0 0 30px rgba(255,140,0,0.6);
+    transform: translateY(-4px);
+}
+
+.clock {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+#timer {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: orange;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, orange, #ff6600);
+    border-radius: 10px;
+    box-shadow: 0 0 15px orange;
+    transition: width 1.5s ease;
+}
+
+/* CLUTCH MODE */
+body.clutch {
+    background: radial-gradient(circle at top, #2b0000, #000);
+}
+
+body.clutch .card {
+    border: 1px solid rgba(255,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(255,0,0,0.3);
+}
+
+body.clutch .logo,
+body.clutch .highlight,
+body.clutch #timer {
+    color: #ff2e2e;
+    text-shadow: 0 0 10px red;
+}
+.congrats-popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(135deg, orange, #ff4500);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 50px rgba(255,140,0,0.6);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.congrats-popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
