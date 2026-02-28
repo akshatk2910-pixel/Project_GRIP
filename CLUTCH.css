@@ -333,26 +333,24 @@ li {
 /* 📱 CLUTCH MOBILE OPTIMIZED */
 /* ========================= */
 
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE (CLUTCH - GRIP STYLE) */
+/* ========================= */
+
 @media (max-width: 480px) {
 
-    body {
-        padding: 0 12px;
-    }
-
     .clutch-container {
-        width: 100%;
-        margin: 20px auto;
-        padding-bottom: 130px; /* space for fixed navbar */
+        width: 95%;
+        margin: 20px auto 100px auto;
+        padding-bottom: 120px;
     }
 
-    /* HEADER */
     .header {
         margin-bottom: 20px;
     }
 
     .header h1 {
-        font-size: 24px;
-        line-height: 1.2;
+        font-size: 22px;
     }
 
     .header p {
@@ -363,49 +361,42 @@ li {
         font-size: 11px;
     }
 
-    /* CARDS */
     .card {
-        padding: 14px;
-        border-radius: 12px;
-        margin-bottom: 16px;
+        padding: 16px;
+        border-radius: 14px;
     }
 
-    /* TIMER */
     .timer-card h2 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .timer-buttons {
-        gap: 8px;
-        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .timer-buttons button {
-        padding: 6px 12px;
+        padding: 6px 14px;
         font-size: 12px;
     }
 
-    /* TASK BUTTON */
     .add-task {
+        padding: 6px 12px;
         font-size: 13px;
-        padding: 6px 10px;
     }
 
     .add-task span {
         font-size: 16px;
     }
 
-    /* EXIT BUTTON */
     .exit-btn {
         padding: 10px;
         font-size: 14px;
     }
 
-    /* POPUP */
     .popup-content {
-        width: 95%;
+        width: 90%;
         padding: 20px;
-        border-radius: 16px;
+        font-size: 14px;
     }
 
     .popup-content h2 {
@@ -416,11 +407,11 @@ li {
         font-size: 14px;
     }
 
-    /* NAVBAR FIX */
+    /* Navbar exactly like Grip */
     .bottom-nav {
         width: 95%;
         bottom: 15px;
-        padding: 10px 6px;
+        padding: 12px 8px;
     }
 
     .nav-item span {
